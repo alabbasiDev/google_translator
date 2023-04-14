@@ -14,7 +14,7 @@ class GoogleTranslatorRepository {
   }
 
   Future<String> translate(
-      {required String source,
+      { String? source,
       required String target,
       required String apiKey,
       required Duration cacheDuration,
@@ -26,7 +26,7 @@ class GoogleTranslatorRepository {
             "source": source,
             "target": target,
             "format": "text"
-          },
+          }..removeWhere((key, value) => value == null),
           options: buildCacheOptions(cacheDuration));
 
       if (response.statusCode == 200 &&
