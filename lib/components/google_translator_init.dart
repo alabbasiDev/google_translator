@@ -11,18 +11,18 @@ class GoogleTranslatorInit extends StatelessWidget {
   final Duration cacheDuration;
 
   /// Turn this `true` in case you don't know the `target` device language.
-  final bool? automaticDetection;
+  final bool automaticDetection;
 
   /// The original text [source] language.
-  final Locale translateFrom;
+  final Locale? translateFrom;
 
   /// The language in which the text should appear
   final Locale? translateTo;
 
   const GoogleTranslatorInit(this.apiKey,
       {required this.builder,
-      required this.translateFrom,
-      this.automaticDetection,
+       this.translateFrom,
+      this.automaticDetection = true,
       this.translateTo,
       this.cacheDuration = const Duration(days: 7)})
       : assert(automaticDetection == true || translateTo != null,

@@ -17,8 +17,8 @@ class GoogleTranslatorController {
     return _instance;
   }
 
-  static void init(String apiKey, Locale translateFrom,
-      {bool? automaticDetection,
+  static void init(String apiKey, Locale? translateFrom,
+      {bool automaticDetection = true,
       Locale? translateTo,
       required Duration cacheDuration}) {
     _instance = GoogleTranslatorController._()
